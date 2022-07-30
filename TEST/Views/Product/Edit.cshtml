@@ -1,0 +1,62 @@
+﻿@model TEST_Models.Models.Product
+
+<!-- Modal -->
+<div class="modal fade edtmodal" id="create_prod" data-bs-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="CreateProdTitle" aria-hidden="true">
+    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="CreateProdLongTitle"> Edit Product</h5>
+                <button type="button" class="btn close" data-dismiss="close_modal" aria-label="Close">
+                    <span aria-hidden="true" style="font-size: xx-large;">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="post" asp-action="Edit" id="prodForm">
+                    <input asp-for="Id" hidden />
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group row">
+                                <div class="col-4">
+                                    <label asp-for="ProductCode"></label>
+                                </div>
+                                <div class="col-8">
+                                    <input asp-for="ProductCode" class="form-control" />
+                                    <span asp-validation-for="ProductCode" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group row pt-2">
+                                <div class="col-4">
+                                    <label asp-for="ProductName"></label>
+                                </div>
+                                <div class="col-8">
+                                    <input asp-for="ProductName" class="form-control" />
+                                    <span asp-validation-for="ProductName" class="text-danger"></span>
+                                </div>
+                            </div> 
+                             <div class="form-group row pt-2">
+                                <div class="col-4">
+                                    <label asp-for="UnitPrice"></label>
+                                </div>
+                                <div class="col-8">
+                                    <input asp-for="UnitPrice" class="form-control" />
+                                    <span asp-validation-for="UnitPrice" class="text-danger"></span>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="close_modal">Close</button>
+                <button type="button" id="saveprod" class="btn btn-primary" data-edit="edt_product">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+
+    @{<partial name="_ValidationScriptsPartial"/>}
+}

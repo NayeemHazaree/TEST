@@ -1,0 +1,41 @@
+﻿<div id="prod_creation_modal">
+
+</div>
+<div id="edit_modal">
+
+</div>
+<div id="delete_modal">
+
+</div>
+<div class="border bg-white p-3">
+    <div class="row">
+        <div class="col-6">
+            Product List
+        </div>
+        <div id="create_prd" class="col-6">
+            @*<a asp-controller="Brand" asp-action="Create">Add New Brand</a>*@
+            <button class="btn btn-primary addPrd" data-toggle="add-modal" 
+            data-url="@Url.Action("Create")" style="float:right">Create New Products</button>
+             @*<a type="button" class="btn btn-primary" href="/Product/Create" style="float:right">Create New Product</a>*@
+        </div>
+    </div>
+    <br />
+    <table id="prod_table" class="table table-striped table-bordered pt-2" style="width:100%;text-align:center;">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Product Code</th>
+                <th>Product Name</th>
+                <th>Unit Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+<script src="~/js/get_prod_list.js"></script>
+<script src="~/js/prod_create.js"></script>
+<script src="~/js/edit_prod.js"></script>
+<script src="~/js/delete_prod.js"></script>
+
+
