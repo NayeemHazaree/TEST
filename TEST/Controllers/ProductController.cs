@@ -26,7 +26,7 @@ namespace TEST.Controllers
 
         public IActionResult Create()
         {
-            return View("Create");
+            return PartialView("_AddProd");
         }
 
         //POST -Create
@@ -40,14 +40,14 @@ namespace TEST.Controllers
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View("Create");
+            return PartialView("_AddProd");
         }
 
         //GET -Edit
         public IActionResult Edit(int id)
         {
             var prd = _db.Product.Find(id);
-            return View("Edit", prd);
+            return PartialView("_EditProd", prd);
         }
 
         //POST -Edit
@@ -61,14 +61,14 @@ namespace TEST.Controllers
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View("Edit");
+            return PartialView("_EditProd");
         }
 
         //GET -Delete
         public IActionResult Delete(int id)
         {
             var brand = _db.Product.Find(id);
-            return View("Delete", brand);
+            return PartialView("_DeleteProd", brand);
         }
 
         //POST -Delete
