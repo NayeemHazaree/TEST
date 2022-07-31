@@ -67,8 +67,8 @@ namespace TEST.Controllers
         //GET -Delete
         public IActionResult Delete(int id)
         {
-            var brand = _db.Product.Find(id);
-            return PartialView("_DeleteProd", brand);
+            var prod = _db.Product.Find(id);
+            return PartialView("_DeleteProd", prod);
         }
 
         //POST -Delete
