@@ -13,7 +13,7 @@ namespace TEST.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            return View("Index");
         }
         #region API CALLS
         [HttpGet]
@@ -78,8 +78,11 @@ namespace TEST.Controllers
         {
             var prod = _db.Product.FirstOrDefault(x => x.Id == id);
             //var brand = _db.Brand.Find(id);
-            _db.Product.Remove(prod);
-            _db.SaveChanges();
+            if (prod != null)
+            {
+                _db.Product.Remove(prod);
+                _db.SaveChanges();
+            }
             return RedirectToAction("Index");
         }
     }

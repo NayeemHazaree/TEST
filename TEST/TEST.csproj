@@ -21,4 +21,8 @@
     <ProjectReference Include="..\TEST_Models\TEST_Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\NewFolder\" />
+  </ItemGroup>
+
 </Project>
